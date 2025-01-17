@@ -7,7 +7,7 @@ const path = require('path');
 const MongoStore = require('connect-mongo');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3006;
 
 // MongoDB connection with debug logging
 const MONGO_URI = process.env.MONGO_URI;
@@ -163,9 +163,11 @@ app.post('/api/logout', isAuthenticated, (req, res) => {
 
 app.use(express.static(path.join(__dirname, '../')));
 
-// Catch-all route to serve index.html
+app.use(express.static(path.join(__dirname, '../frontend/public')));
+
+// Catch-all route to handle direct URL access
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../index.html'));
+    res.sendFile(path.join(__dirname, '../frontend/public/index.html'));
 });
 
 app.listen(PORT, () => {
