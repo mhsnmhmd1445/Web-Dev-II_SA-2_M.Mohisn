@@ -7,7 +7,7 @@ const path = require('path');
 const MongoStore = require('connect-mongo');
 
 const app = express();
-const PORT = process.env.PORT || 3006;
+const PORT = process.env.PORT || 3002;
 
 // MongoDB connection with debug logging
 const MONGO_URI = process.env.MONGO_URI;
