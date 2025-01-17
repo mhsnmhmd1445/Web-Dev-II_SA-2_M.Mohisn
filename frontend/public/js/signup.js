@@ -111,3 +111,5 @@ document.addEventListener('mouseover', () => {
     cursor.style.display = 'block';
     cursorOutline.style.display = 'block';
 });
+
+

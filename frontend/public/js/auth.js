@@ -53,3 +53,4 @@ async function updateAuthUI() {
 
 // Call updateAuthUI when page loads
 document.addEventListener('DOMContentLoaded', updateAuthUI);
+
